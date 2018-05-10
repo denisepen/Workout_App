@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
 
  get '/show' do
    @user = User.find(session[:user_id])
-   erb :"/users/show"
+   erb :"/users/index"
  end
 
  get '/workouts/:id/edit' do
@@ -78,7 +78,7 @@ get '/users/workouts' do
     @walk_wkts = @user.workouts.where(workout: "Walk")
   end
   # binding.pry
-  erb :"/users/show"
+  erb :"/users/index"
 end
 
  get '/workouts/new' do
@@ -140,15 +140,7 @@ end
   post '/signup' do
 
       if params[:username].empty? || params[:email].empty? || params[:password].empty?
-        # trying to get a list of error messages
-        #for login and signup errors/mistakes
 
-        # if @user.errors.any?
-        #   # binding.pry
-        #   @message = @user.errors.full_messages.each do |msg|
-        #     msg
-        #   end
-        # end
         flash[:s_error] = "Username, Email & Password required "
            redirect "/signup"
        else

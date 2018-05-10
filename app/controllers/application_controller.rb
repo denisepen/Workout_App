@@ -92,9 +92,10 @@ end
   end
 
  get '/workouts/show' do
+   #shows a users single workout
    @user = User.find(session[:user_id])
    @workout = Workout.find(params[:id])
-   erb :"workouts/show"
+   erb :"users/show"
  end
 
  get '/workouts/:id' do
@@ -104,10 +105,10 @@ end
   if session[:user_id] == @workout.user_id
 
     @user = User.find(session[:user_id])
-  erb :"workouts/show"
+  erb :"users/show"
 elsif logged_in? && session[:user_id] != @workout.user_id
   @user = User.find(@workout.user_id)
-  erb :"workouts/show"
+  erb :"users/show"
 else
 
   redirect '/login'
@@ -187,7 +188,7 @@ post '/workouts/show' do
   end
     @workout.save
     @user.workouts << @workout
-  erb :"/workouts/show"
+  erb :"/users/show"
   end
 end
 

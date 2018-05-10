@@ -4,7 +4,7 @@ require 'rack-flash'
 
  register Sinatra::ActiveRecordExtension
 
-test
+
 class ApplicationController < Sinatra::Base
 
   enable :sessions

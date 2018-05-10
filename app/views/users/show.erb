@@ -5,6 +5,8 @@
     <h3>Total Mileage: <%= @user.workouts.sum("mileage") %> miles </h3>
 
 
+<div class="" id="workout_date">
+
 
     <% if @bike_wkts %>
     <h4>Total Bike Time: <%= @bike_wkts.sum("duration") %> Total Bike Mileage: <%= @bike_wkts.sum("mileage") %> </h4>
@@ -20,10 +22,10 @@
     <% end %>
 
     <% @user.workouts.all.each do |wkt| %>
-    <a href="/workouts/<%= wkt.id %>">Workout: <%= wkt.workout %>   Duration: <%= wkt.duration %> minutes <% if wkt.date %>Date: <%= wkt.date %> <% end %>
+    <a href="/workouts/<%= wkt.id %>">Workout: <%= wkt.workout %>   Duration: <%= wkt.duration %> minutes <% if wkt.date %>Date: <%= wkt.date.strftime("%b %d, %Y") %> <% end %>
      <% if wkt.mileage %>Mileage: <%= wkt.mileage %> miles <% end %> </a> <br>
 
       <% end %> <br>
       <span></span>
-
+</div>
       <a href="/landing">Home Page</a> or <a href="/logout">Log Out</a>

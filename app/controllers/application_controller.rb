@@ -60,26 +60,7 @@ else
 end
 end
 
-get '/users/workouts' do
-  # binding.pry
-  #shows a list of all the users workouts
-  @user=User.find(session[:user_id])
 
-  if !@user.workouts.where(workout: "Bike").empty?
-    @bike_wkts = @user.workouts.where(workout: "Bike")
-  end
-  if !@user.workouts.where(workout: "Run").empty?
-    @run_wkts = @user.workouts.where(workout: "Run")
-  end
-  if !@user.workouts.where(workout: "Swim").empty?
-    @swim_wkts = @user.workouts.where(workout: "Swim")
-  end
-  if !@user.workouts.where(workout: "Walk").empty?
-    @walk_wkts = @user.workouts.where(workout: "Walk")
-  end
-  # binding.pry
-  erb :"/users/index"
-end
 
  get '/workouts/new' do
    @workouts = Workout.all
@@ -98,22 +79,9 @@ end
    erb :"users/show"
  end
 
- get '/workouts/:id' do
-# shows users single workout
-   @workout = Workout.find(params[:id])
 
-  if session[:user_id] == @workout.user_id
 
-    @user = User.find(session[:user_id])
-  erb :"users/show"
-elsif logged_in? && session[:user_id] != @workout.user_id
-  @user = User.find(@workout.user_id)
-  erb :"users/show"
-else
 
-  redirect '/login'
-end
-end
 
 
  patch '/workouts/:id' do

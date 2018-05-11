@@ -5,10 +5,10 @@ has_many :workouts
 # validates :username, presence: true
 validates_presence_of :username
 validates_presence_of :email
-validates_presence_of :password
+# validates_presence_of :password
 
 # validates :password, presence: true
-validates_uniqueness_of :password
+# validates_uniqueness_of :password
 
 def slug
       self.username.downcase.gsub(" ", "-")

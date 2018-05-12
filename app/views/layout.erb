@@ -12,6 +12,10 @@
       <div class="s_signerror"><%= flash[:s_signerror] %></div>
       <% end %>
 
+      <% if flash[:not_user] %>
+      <div class="not_user"><%= flash[:not_user] %></div>
+      <% end %>
+
       <% if flash[:signup] %>
       <div class="signup"><%= flash[:signup] %></div>
       <% end %>

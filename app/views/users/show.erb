@@ -1,8 +1,9 @@
 <h1><%= @user.username.capitalize %>'s Workout Diary</h1>
 
 <h1>Workout Type:  <%= @workout.workout %>    </h4> <br>
-
+  <% if @workout.date %>
   <h4>Date: <%= @workout.date.strftime("%B %d, %Y") %></h4>
+  <% end %>
       <% if @workout.mileage %>
   <h4>Mileage: <%= @workout.mileage %></h4>
       <% end %>

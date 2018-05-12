@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
 
-      if params[:username].present?
+      if User.find_by(username: params[:username]).present?
         flash[:s_signerror] = "Please choose a different username "
            redirect "/signup"
         elsif params[:username].empty? || params[:email].empty? || params[:password].empty?

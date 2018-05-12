@@ -105,6 +105,7 @@ class WorkoutsController < ApplicationController
       @workout.delete
      redirect '/users/workouts'
    else
+     flash[:not_user] = "You can't edit another user's workout!"
     redirect '/users/workouts'
  end
  end

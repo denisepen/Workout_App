@@ -28,6 +28,11 @@ class WorkoutsController < ApplicationController
  end
  end
 
+ get '/workouts/workouts' do
+    @user = User.find(session[:user_id])
+   erb :"/workouts/index"
+ end
+
   get '/workouts/:id' do
   # shows users single workout
     @workout = Workout.find(params[:id])
@@ -45,13 +50,6 @@ class WorkoutsController < ApplicationController
   end
 
 
-
-
-
-   get '/workouts/workouts' do
-     #  @user = User.find(session[:user_id])
-     erb :"/workouts/index"
-   end
 
   get '/workouts/show' do
     #shows a users single workout

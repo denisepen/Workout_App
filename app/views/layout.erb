@@ -8,6 +8,9 @@
   <body>
     <div class="">
 
+      <% if flash[:s_signerror] %>
+      <div class="s_signerror"><%= flash[:s_signerror] %></div>
+      <% end %>
 
       <% if flash[:signup] %>
       <div class="signup"><%= flash[:signup] %></div>

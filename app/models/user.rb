@@ -8,7 +8,7 @@ validates_presence_of :email
 # validates_presence_of :password
 
 # validates :password, presence: true
-# validates_uniqueness_of :password
+ validates_uniqueness_of :username
 
 def slug
       self.username.downcase.gsub(" ", "-")

@@ -48,7 +48,10 @@ class UsersController < ApplicationController
 
   post '/signup' do
 
-      if params[:username].empty? || params[:email].empty? || params[:password].empty?
+      if params[:username].present?
+        flash[:s_signerror] = "Please choose a different username "
+           redirect "/signup"
+        elsif params[:username].empty? || params[:email].empty? || params[:password].empty?
 
         flash[:s_error] = "Username, Email & Password required "
            redirect "/signup"

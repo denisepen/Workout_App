@@ -12,7 +12,10 @@ body {
   /*backround: url(https://media.self.com/photos/5867a314bf5e49f716efe864/4:3/w_768,c_limit/workout-package_1.png);*/
 }
 .notice, .signup { color: blue; }
-.l_error, .s_error, .s_signerror, .not_user { color: red; }
+.l_error, .s_error, .s_signerror, .not_user {
+  color: red;
+  font-weight: bold;
+}
 
 div {
   text-align: center;

@@ -21,6 +21,7 @@ class WorkoutsController < ApplicationController
 
     erb :"/workouts/edit"
   else
+    flash[:not_user] = "You can't edit another user's workout!"
     redirect '/users/workouts'
   end
  else
@@ -43,6 +44,7 @@ class WorkoutsController < ApplicationController
    erb :"users/show"
   elsif logged_in? && session[:user_id] != @workout.user_id
    @user = User.find(@workout.user_id)
+  #
    erb :"users/show"
   else
     redirect '/login'

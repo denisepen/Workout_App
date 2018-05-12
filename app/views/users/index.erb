@@ -7,13 +7,13 @@
 
 
     <% if @bike_wkts %>
-    <h4>Total Bike Time: <%= @bike_wkts.sum("duration") %> Total Bike Mileage: <%= @bike_wkts.sum("mileage") %> </h4>
+    <h4>Total Bike Time: <%= @bike_wkts.sum("duration") %> minutes | Total Bike Mileage: <%= @bike_wkts.sum("mileage") %> miles </h4>
     <% end %>
     <% if @run_wkts %>
-    <h4>Total Run Time: <%= @run_wkts.sum("duration") %> Total Run Mileage: <%= @run_wkts.sum("mileage") %> </h4>
+    <h4>Total Run Time: <%= @run_wkts.sum("duration") %> minutes | Total Run Mileage: <%= @run_wkts.sum("mileage") %> miles </h4>
     <% end %>
     <% if @walk_wkts %>
-    <h4>Total Walk Time: <%= @walk_wkts.sum("duration") %> Total Walk Mileage: <%= @walk_wkts.sum("mileage") %> </h4>
+    <h4>Total Walk Time: <%= @walk_wkts.sum("duration") %> minutes | Total Walk Mileage: <%= @walk_wkts.sum("mileage") %> miles </h4>
     <% end %>
     <% if @swim_wkts %>
     <h4>Total Swim Time: <%= @swim_wkts.sum("duration") %> Total Swim Mileage: <%= @swim_wkts.sum("mileage") %> </h4>

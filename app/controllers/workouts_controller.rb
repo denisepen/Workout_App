@@ -107,6 +107,7 @@ class WorkoutsController < ApplicationController
      # binding.pry
     if  @workout.user_id == session[:user_id] && logged_in?
       @workout.delete
+      flash[:deleted] = "Your workout has been deleted!"
      redirect '/users/workouts'
    else
      flash[:not_user] = "You can't edit another user's workout!"

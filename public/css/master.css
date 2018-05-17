@@ -12,24 +12,28 @@ body {
   /*background-image: url("https://media.self.com/photos/5867a314bf5e49f716efe864/4:3/w_768,c_limit/workout-package_1.png");*/
   background-image: url("http://www.ehealthharmony.com/wp-content/uploads/2016/04/learn-how-to-carbo-load-with-la-fitness-and-living-healthy.jpg");
   background-size: cover;
+  opacity: 0.75;
 }
+
 .notice, .signup, .updated {
   color: blue;
   background: rgb(204, 255, 51);
   font-weight: bold;
  }
 
-.l_error, .s_error, .s_signerror, .not_user {
+ .deleted, .l_error, .s_error, .s_signerror, .not_user {
   color: red;
   font-weight: bold;
   background: rgb(204, 255, 51);
 }
 
 div {
-  opacity: 0.75;
+  opacity: 1.0;
   text-align: center;
-  /*margin-left: auto;
-    margin-right: auto;*/
-    background: rgb(255, 255, 255);
-    border: 1px solid gray;
+  margin-left: auto;
+    margin-right: auto;
+    /*background: rgb(255, 255, 255);*/
+    /*border: 1px solid gray;*/
+    position: auto;
+    width: 75%;
 }

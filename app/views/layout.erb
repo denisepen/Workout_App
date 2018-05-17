@@ -31,8 +31,13 @@
       <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
       <% end %>
+
       <% if flash[:updated] %>
       <div class="updated"><%= flash[:updated] %></div>
+      <% end %>
+
+      <% if flash[:deleted] %>
+      <div class="deleted"><%= flash[:deleted] %></div>
       <% end %>
 
       <%= yield %>

@@ -1,6 +1,6 @@
 require './config/environment'
 require 'rack-flash'
- require 'sinatra/redirect_with_flash'
+#  require 'sinatra/redirect_with_flash'
 
  register Sinatra::ActiveRecordExtension
 
@@ -37,13 +37,6 @@ class ApplicationController < Sinatra::Base
     session.clear
     redirect '/'
  end
-
- # get '/show' do
- #   @user = User.find(session[:user_id])
- #   erb :"/users/index"
- # end
-
-
 
   helpers do
   		def logged_in?

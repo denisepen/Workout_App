@@ -28,12 +28,13 @@ body {
 }
 
 div {
-  opacity: 1.0;
+  /*opacity: 2.0;*/
   text-align: center;
   margin-left: auto;
     margin-right: auto;
-    /*background: rgb(255, 255, 255);*/
+    margin-top: 150px;
+    background: rgb(255, 255, 255);
     /*border: 1px solid gray;*/
     position: auto;
-    width: 75%;
+    width: 65%;
 }

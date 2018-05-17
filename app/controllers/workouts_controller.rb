@@ -73,9 +73,11 @@ class WorkoutsController < ApplicationController
        @user = User.find(session[:user_id])
        @user.id = @workout.user_id
        @workout.save
+       flash[:updated] = "Your workout has been updated!"
        redirect "/workouts/#{@workout.id}"
      else
        redirect "/workouts/#{@workout.id}/edit"
+
      end
 
    end

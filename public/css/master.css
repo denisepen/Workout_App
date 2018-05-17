@@ -13,11 +13,16 @@ body {
   background-image: url("http://www.ehealthharmony.com/wp-content/uploads/2016/04/learn-how-to-carbo-load-with-la-fitness-and-living-healthy.jpg");
   background-size: cover;
 }
-.notice, .signup { color: blue; }
+.notice, .signup, .updated {
+  color: blue;
+  background: rgb(204, 255, 51);
+  font-weight: bold;
+ }
 
 .l_error, .s_error, .s_signerror, .not_user {
   color: red;
   font-weight: bold;
+  background: rgb(204, 255, 51);
 }
 
 div {

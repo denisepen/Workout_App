@@ -1,6 +1,6 @@
 require './config/environment'
 require 'rack-flash'
- require 'sinatra/redirect_with_flash'
+ # require 'sinatra/redirect_with_flash'
 
  register Sinatra::ActiveRecordExtension
 

@@ -20,24 +20,6 @@ class ApplicationController < Sinatra::Base
     erb :homepage
   end
 
-  get '/signup' do
-    erb :'/users/signup'
-  end
-
-  get '/login' do
-    erb :'/users/login'
-  end
-
-  get '/landing' do
-    @user = User.find(session[:user_id])
-    erb :"/users/landing"
-  end
-
-  get '/logout' do
-    session.clear
-    redirect '/'
- end
-
   helpers do
   		def logged_in?
   			!!session[:user_id]

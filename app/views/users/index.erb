@@ -20,8 +20,14 @@
     <% end %>
 
     <% @user.workouts.all.each do |wkt| %>
+
     <a href="/workouts/<%= wkt.id %>">Workout: <%= wkt.workout %>   Duration: <%= wkt.duration %> minutes <% if wkt.date %>Date: <%= wkt.date.strftime("%B %d, %Y") %> <% end %>
-     <% if wkt.mileage %>Mileage: <%= wkt.mileage %> miles <% end %> </a> <br>
+     <% if wkt.mileage %>Mileage: <%= wkt.mileage %> miles <% end %> </a>
+     <form class="" action="/workouts/<%= wkt.id %>/delete" method="post">
+       <input type="hidden" id= "hidden" name="_method" value="delete">
+       <input type="submit" name="" value="Delete">
+     </form>
+      <br>
 
       <% end %> <br>
       <span></span>

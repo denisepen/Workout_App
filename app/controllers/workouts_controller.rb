@@ -7,7 +7,7 @@ require 'rack-flash'
 class WorkoutsController < ApplicationController
 
   get '/workouts/new' do
-    @workouts = Workout.all
+    # @workouts = Workout.all
     erb :'/workouts/new'
   end
 

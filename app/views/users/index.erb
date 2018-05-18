@@ -1,7 +1,7 @@
 
 
     <h1><%= @user.username.capitalize %>'s  Workouts</h1>
-    <h3>Total Workout Time: <%= @user.workouts.sum("duration") %> minutes (<%= (@user.workouts.sum("duration").to_f.round(3))/60 %> Hours)</h3>
+    <h3>Total Workout Time: <%= @user.workouts.sum("duration") %> minutes (<%= (@user.workouts.sum("duration").to_f/60).round(2) %> Hours)</h3>
     <h3>Total Mileage: <%= @user.workouts.sum("mileage") %> miles </h3>
 
 

@@ -16,7 +16,8 @@ class UsersController < ApplicationController
   end
 
   get '/landing' do
-    @user = User.find(session[:user_id])
+    @user = current_user
+    # User.find(session[:user_id])
     erb :"/users/landing"
   end
 
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
   get '/users/workouts' do
     # binding.pry
     #shows a list of all the users workouts
-    @user=User.find(session[:user_id])
+    @user=current_user
 
     if !@user.workouts.where(workout: "Bike").empty?
       @bike_wkts = @user.workouts.where(workout: "Bike")
@@ -58,13 +59,13 @@ class UsersController < ApplicationController
        else
          @user = User.create(:username => params[:username], :email => params[:email].downcase, :password => params[:password])
          @user.save
-         if  logged_in? || @user.save
+
          session[:user_id] = @user.id
          session[:email] = @user.email
          session[:username] = @user.username
          flash[:signup] = "Signed Up!"
          redirect '/landing'
-       end
+
       end
   end
 

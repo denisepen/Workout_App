@@ -14,7 +14,7 @@ class WorkoutsController < ApplicationController
   get '/workouts/:id/edit' do
    #  binding.pry
   if logged_in?
-    @user = User.find(session[:user_id])
+    @user = current_user
     @workout = Workout.find(params[:id])
     @user.save
     if @user.id == @workout.user_id
@@ -30,7 +30,7 @@ class WorkoutsController < ApplicationController
  end
 
  get '/workouts/workouts' do
-    @user = User.find(session[:user_id])
+    @user = current_user
    erb :"/workouts/index"
  end
 
@@ -40,7 +40,7 @@ class WorkoutsController < ApplicationController
 
    if session[:user_id] == @workout.user_id
 
-     @user = User.find(session[:user_id])
+     @user = current_user
    erb :"users/show"
   elsif logged_in? && session[:user_id] != @workout.user_id
    @user = User.find(@workout.user_id)
@@ -51,11 +51,9 @@ class WorkoutsController < ApplicationController
   end
   end
 
-
-
   get '/workouts/show' do
     #shows a users single workout
-    @user = User.find(session[:user_id])
+    @user = current_user
     @workout = Workout.find(params[:id])
     erb :"users/show"
   end

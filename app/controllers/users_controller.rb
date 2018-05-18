@@ -58,11 +58,11 @@ class UsersController < ApplicationController
            redirect "/signup"
        else
          @user = User.create(:username => params[:username], :email => params[:email].downcase, :password => params[:password])
-         @user.save
+        #  @user.save
 
          session[:user_id] = @user.id
-         session[:email] = @user.email
-         session[:username] = @user.username
+        #  session[:email] = @user.email
+        #  session[:username] = @user.username
          flash[:signup] = "Signed Up!"
          redirect '/landing'
 
@@ -76,8 +76,8 @@ class UsersController < ApplicationController
     #  binding.pry
     if @user && @user.authenticate(params[:password])
           session[:user_id] = @user.id
-          session[:email] = @user.email
-          session[:username] = @user.username
+          # session[:email] = @user.email
+          # session[:username] = @user.username
         flash[:notice] = "Logged In!"
         redirect "/landing"
     else
